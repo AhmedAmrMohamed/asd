@@ -1,3 +1,4 @@
+import pyperclip as pclip
 import os
 class main_class:
     def __init__(self):
@@ -5,18 +6,25 @@ class main_class:
         """#include<bits/stdc++.h>
 using namespace std;
 #define ll long long
+#define ts for(int tst=1;tst<=tss;++tst)
 int main()
 {
 
 }"""
+    def opterm(self,path):
+        os.system(f'start \"{path} && color a\"')
+
     def quick_make(self,nm=None):
-        os.chdir(r'c:\users\ahmed\desktop\py\round')
+        path = r'c:\users\ahmed\desktop\py\round'
+        os.chdir(path)
         if not nm:
             nm='a'
         f=open(f'{nm}.cpp','w')
         print(self.tmp,file=f)
         f.close()
         os.system(f'gvim {nm}.cpp')
+        pclip.copy(f'g++ {nm}.cpp')
+        # self.opterm(path)
 
 
     def just_make(self,exten,name):
@@ -27,6 +35,9 @@ int main()
         print(self.tmp,file = f)
         f.close()
         os.system(f'gvim {nm}')
+        pclip.copy(f'g++ {nm}')
+        # self.opterm(path)
+
 
 
 

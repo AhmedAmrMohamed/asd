@@ -5,7 +5,7 @@ class main_class():
         if not path:
             path  = os.getcwd()
         os.chdir(path)
-        pattern = re.compile(match)
+        pattern = re.compile(match,flags=2)
         try:
             os.sys.stdout  = open('res.txt',"w")
             ok = True
