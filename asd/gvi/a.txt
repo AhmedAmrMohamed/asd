@@ -1,0 +1,8 @@
+
+#include<bits/stdc++.h>
+using namespcae std;
+#define ll long long
+int main()
+{
+}
+
