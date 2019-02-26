@@ -9,6 +9,7 @@ using namespace std;
 #define ts for(int tst=1;tst<=tss;++tst)
 int main()
 {
+//freopen("","r",stdin);
 
 }"""
     def opterm(self,path):

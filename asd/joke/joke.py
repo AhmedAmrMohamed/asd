@@ -4,7 +4,8 @@ import random
 import os
 class main_class:
     def __init__(self):
-        self.path = self.fixed_path()
+        # self.path = self.fixed_path()
+        self.path = f'c:/users/{os.getlogin()}/documents/asdfiles'
         self.file = f'{self.path}/jokes'
         self.urla = 'https://corporatebs-generator.sameerkumar.website/'
         self.urlb = 'https://geek-jokes.sameerkumar.website/api'
@@ -16,19 +17,26 @@ class main_class:
         path.pop()
         path = '/'.join(path)
         return path
-    def get_two(self):
-        a=rq.get(self.urla).json()['phrase']
-        b=rq.get(self.urlb).json()
+    def get_two(self,timeout = 4):
+        a=rq.get(self.urla,timeout=timeout).json()['phrase']
+        b=rq.get(self.urlb,timeout=timeout).json()
         return a,b
 
     def scrape(self):
         jokes = set()
-        for i in range(20):
-            print('getting ',i)
-            a,b=self.get_two()
-            jokes.add(a)
-            jokes.add(b)
-        self.add(jokes)
+        tout  = 4
+        try:
+            for i in range(20):
+                print('getting ',i)
+                if i==3:
+                    tout = 0
+                a,b=self.get_two(tout)
+                jokes.add(a)
+                jokes.add(b)
+        except Exception as exc:
+            print('shit happened',exc)
+        finally:
+            self.add(jokes)
 
     def add(self,jokes):
         fi = open(self.file,'rb')

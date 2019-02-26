@@ -7,7 +7,7 @@ class main_class():
         os.chdir(path)
         pattern = re.compile(match,flags=2)
         try:
-            os.sys.stdout  = open('res.txt',"w")
+            os.sys.stdout  = open('res.txt',"w",encoding = 'UTF-8')
             ok = True
         except Exception as exc:
             print(exc)
