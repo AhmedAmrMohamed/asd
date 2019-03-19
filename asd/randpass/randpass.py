@@ -52,5 +52,7 @@ class Randpass:
         log.close()
         if time.time() - int(last) >= 28*24*3600.0:
             se.gatpass()
+        else:
+            print('not yet')
 
 
