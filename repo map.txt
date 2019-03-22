@@ -28,7 +28,12 @@ asd/
 
     opterm:(only on windows) `asd opterm path` open the cmd w/ in the path directory
            just like "expo" this is usless by itself but really useful in other projects
-
+    
+    org     : cause now i'm too lazy to move my files around.
+              so this searches a directory(and all it's subs) looking for files
+              which their names contain one or all (depends on arg) from a given
+              list and move them to dest folder
+              type `asd org -h` for  more info.
 
     randpass:since my collage requires me to change the password for my collage-email
              every month -I don't give a damn about that email- here goes:
