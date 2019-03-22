@@ -9,22 +9,17 @@ def main():
     def quick_install():
         '''run the python setup.py install'''
         os.system('python setup.py install')
-
-    def asd_install():
-        '''install the latest asd proj'''
-        path = os.getcwd()
-        path = path.replace('\\','/')
-        os.chdir('C:\\Users\\Ahmed\\Desktop\\py\\asd')
-        os.system('asd inst -q')
-        os.chdir(path)
+    def asd_inst():
+        os.chdir('C:\\Users\\Ahmed\\Desktop\\py\\asd\\')
+        quick_install()
 
     def quick_upload():
         pass
 
     methods = {
+            '-a':asd_inst,
             '-h':get_help,
-            '-q':quick_install,
-            '-a':asd_install,
+            '-i':quick_install,
             '-u':quick_upload
             }
     methods[option]()

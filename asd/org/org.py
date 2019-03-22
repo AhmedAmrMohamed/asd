@@ -26,13 +26,16 @@ class Org:
         dst  = self.dst
         func = self.allIn if self.mode =='all' else self.oneIn
         for walkitr in os.walk(dire):
-            if walkitr[0][-1] ==  dst:
+            print('dir :: ',walkitr[0].split('\\')[-1])
+            if walkitr[0].split('\\')[-1] ==  dst:
+                print('skipped :: ',dst)
                 continue
             for currfile in walkitr[2]:
                 if func(currfile):
-                    comm = f'move {walkitr[0]}\\\"{currfile}\" {dire}\\{dst}'
-                    print(comm)
-                    os.system(comm)
+                    comm = f'move \"{walkitr[0]}\\{currfile}\" {dire}\\{dst}'
+                    smtWrong = os.system(comm)
+                    if smtWrong:
+                        print(comm)
 
     def folder_exist(self):
         if self.dst in os.listdir():

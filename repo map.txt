@@ -7,7 +7,7 @@ asd/
     cfrate: uses codeforces.com API to get info on a specific contestant in a
             round once it's over and notify the user that the info is ready.
             the notification behaviour can be easily implemented by the user
-            However; I did implement one -the default -that plays a mp4/mp3 file.
+            However; I did implement one -the default -that plays an mp4/mp3 file.
 
     ctrlf :searches from the current directory to all the subs looking for files
            and directories that matches a given regex-expression
@@ -29,9 +29,6 @@ asd/
     opterm:(only on windows) `asd opterm path` open the cmd w/ in the path directory
            just like "expo" this is usless by itself but really useful in other projects
 
-    org   :transverse a directory and all it's subs looking for files which their names
-           contain one or all key(s) of a given list and move them to a destintation
-           directory
 
     randpass:since my collage requires me to change the password for my collage-email
              every month -I don't give a damn about that email- here goes:
