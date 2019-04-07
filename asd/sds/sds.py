@@ -48,7 +48,10 @@ class Sds:
             val = 0
             for i in os.walk(buildPath(path,cur)):
                 for j in i[2]:
-                    val += self.getFileSize(buildPath(i[0],j))
+                    trgt = buildPath(i[0],j)
+                    if not os.path.isfile(trgt):
+                        continue
+                    val += self.getFileSize(trgt)
             loglist.append((cur,val))
         return loglist
 
