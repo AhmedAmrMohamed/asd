@@ -40,4 +40,12 @@ asd/
     randpass:since my collage requires me to change the password for my collage-email
              every month -I don't give a damn about that email- here goes:
                 crates a random password every month and save it in a log file.
+                
+    sds     : (short for: Sort Directories by Size) I always want to sort my folders
+               by size - windows doesn't allow it-, so now i can type:
+               `asd sds` in a directory and folders will be sorted by size in non-increasing
+               order showing the size of each one.
+               `asd sds -r` reverse the display order.
+               thinking to turn this into a gui-app with more uttilty. do you think it will be cool?
+               Are you even reading this? Have you found my easter egg(s)?
 
