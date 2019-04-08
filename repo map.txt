@@ -3,20 +3,25 @@ asd/
     c2p   : goes through the current directory looking for `.cbr` files
             and making them into `.pdf`
             ps: `.cbr` is the extention for comic books files
+            `asd c2p`
 
     cfrate: uses codeforces.com API to get info on a specific contestant in a
             round once it's over and notify the user that the info is ready.
             the notification behaviour can be easily implemented by the user
             However; I did implement one -the default -that plays an mp4/mp3 file.
+            `asd cfrate [contest_id] [handle]`
 
     ctrlf :searches from the current directory to all the subs looking for files
            and directories that matches a given regex-expression
            and list the results.
            have the option to look for pattern and ignore another.
+           `asd ctrlf -h` for commands
+           
 
     expo  :(only on window)when launched from the cmd, opens the current directory
            into explorer.
            saves me a lot of frustration on daily basis ;D
+           `asd expo`
 
     inst  :
             asd inst -i is a short cut for the command `python stup.py install`
@@ -27,14 +32,15 @@ asd/
            process to the point where I don't even type any command.
            (ignore this one for now, it's kinda $&!*)
 
-    opterm:(only on windows) `asd opterm path` open the cmd w/ in the path directory
+    opterm:(only on windows)  open the cmd w/ in the given path directory
            just like "expo" this is usless by itself but really useful in other projects
+           `asd opterm path`
     
     org     : cause now i'm too lazy to move my files around.
               so this searches a directory(and all it's subs) looking for files
               which their names contain one or all (depends on arg) from a given
               list and move them to dest folder
-              type `asd org -h` for  more info.
+              `asd org -h` for  commands.
 
     randpass:since my collage requires me to change the password for my collage-email
              every month -I don't give a damn about that email- here goes:
