@@ -1,5 +1,7 @@
 the goal of this file to explain what does what.
+
 asd/
+
     c2p   : goes through the current directory looking for `.cbr` files
             and making them into `.pdf`
             ps: `.cbr` is the extention for comic books files
