@@ -25,6 +25,7 @@ asd/
     joke  :the main idea is to use some API to give me some cheesy one-liners
            plans to be devloped by adding more APIs and further automate the
            process to the point where I don't even type any command.
+           (ignore this one for now, it's kinda $&!*)
 
     opterm:(only on windows) `asd opterm path` open the cmd w/ in the path directory
            just like "expo" this is usless by itself but really useful in other projects
