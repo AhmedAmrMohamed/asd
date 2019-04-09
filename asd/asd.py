@@ -4,7 +4,7 @@ class asd:
         se.args = os.sys.argv
         se.targ = se.args[1]
         se.args.pop(1)
-        if se.targ != 'drfrilled':
+        if se.targ == 'drfrilled':
             try:
                 import webbrowser
                 webbrowser.open('https://www.youtube.com/watch?v=gO8N3L_aERg')
