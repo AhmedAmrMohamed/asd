@@ -1,45 +1,23 @@
-import os
-from . import ctrlf
-class main:
-    def __init__(self):
-        self.argv    = os.sys.argv
-        self.option  = self.argv[1]
-        self.options = {
-                '-o':self.omatch,
-                '-d':self.dmatch,
-                '-h':self.help
-                }
-        ret = self.options.get(self.option,self.unknown)
-        ret()
+def main():
+    from . import ctrlf
+    import os
+    import argparse
+    '''start of help msgs'''
+    helpMatch  = 'The regex pattern you want to files to match.'
+    helpIgnore = 'The regex pattern you want to files NOT to match.'
+    helpPath   = 'the root path to start the search -if not specified\
+            the current path is used-'
+    '''end of help msgs'''
+    parser = argparse.ArgumentParser(prog = 'Control-f')
 
-    def unknown(self):
-        print("unknow option...")
+    parser.add_argument('match',type = str,help=helpMatch)
+    parser.add_argument('-i','--ignore',help=helpIgnore)
+    parser.add_argument('-p','--path', default = None,help=helpPath)
 
-    def omatch(self):
-        '''
-        -o <match_pattern> <path>                 :: find all that matches a <match_pattern> in <path>
-                                                     if <path> is not given the current directory is
-                                                     used
-        '''
-        opat   = self.argv[2]
-        dire   = self.argv[3] if len(self.argv ) == 4 else None
-        ctrlf.main_class(opat,dire)
+    args = parser.parse_args()
+    # if not os.path.isdir(args.path) and args.path!=None :
+        # raise IOError('An invalid path has been input.')
+    ctrlf.main_class(args.match,args.path,args.ignore)
 
-    def dmatch(self):
-        """
-        -d <match_pattern> <reject_pattern <path> :: find all that matches a <match_pattern> in <path>
-                                                     and doesnot match <reject_pattern>
-                                                     if <path> is not given the current directory is
 
-        """
-        opat  = self.argv[2]
-        dpat  = self.argv[3]
-        dire  = self.argv[4] if len(self.argv ) == 5 else None
-        ctrlf.main_class(opat,dire,dpat)
-
-    def help(self):
-        """
-        -h                                        :: show this help message
-        """
-        for key in self.options:
-            print(self.options[key].__doc__)
+main()

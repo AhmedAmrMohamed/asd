@@ -2,14 +2,12 @@ import os
 import re
 class main_class():
     def __init__(self,match,path = None,reject=None):
-        self.respath = os.path.expanduser('~/.config/asd')
-        self.resfile = 'ctrlfres.txt'
         if not path:
             path  = os.getcwd()
         os.chdir(path)
         pattern = re.compile(match,flags=2)
         try:
-            os.sys.stdout  = open(self.respath+'/'+self.resfile,"w",encoding = 'UTF-8')
+            os.sys.stdout  = open('res.txt',"w",encoding = 'UTF-8')
             ok = True
         except Exception as exc:
             print(exc)
@@ -38,7 +36,8 @@ class main_class():
         for nm in dirs:
             print('{} --> {}'.format(nm[0],nm[1]))
         if ok:
-            print('opening now')
             os.sys.stdout.close()
-            os.system(self.respath+'/'+self.resfile)
+            os.system("res.txt")
+
+
 

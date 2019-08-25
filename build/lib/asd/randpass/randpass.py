@@ -50,7 +50,8 @@ class Randpass:
         log  = open(se.lastup,'rb')
         last = pickle.load(log)
         log.close()
-        if time.time() - int(last) >= 28*24*3600.0:
-            se.gatpass()
+        print(int(last))
+        # if time.time() - int(last) >= 28*24*3600.0:
+            # se.gatpass()
 
 

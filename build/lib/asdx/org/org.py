@@ -1,9 +1,9 @@
 import os
 class Org:
-    def __init__(self,mode,dst,keys):
-        self.mode = mode
-        self.dst  = dst
-        self.keys = keys
+    def __init__(self,argv):
+        self.mode = argv[0]
+        self.dst  = argv[1]
+        self.keys = argv[2:]
         self.dire = os.getcwd()
         print(self.__dict__)
         self.core()
