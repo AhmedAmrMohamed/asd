@@ -1,44 +1,23 @@
-import os
-from . import org
-class main:
-    def __init__(self):
-        self.argv    = os.sys.argv
-        self.option  = self.argv[1]
-        self.options = {
-                '-a':self.allin,
-                '-o':self.onein,
-                '-h':self.help
-                }
-        ret = self.options.get(self.option,self.unknown)
-        ret()
+def main():
+    import argparse
+    # from argparse import RawTextHelpFormatter
+    from . import org
+    helpMode = '''-a: move all files with keys to specific dir(dest)
+All keys must exist to move the file.
+-o: move all files with keys to specific dir(dst)
+at least one key must exist to move the file'''
 
-    def help(self):
-        '''
-        -h     no args
-               print avilable options(this msg)
-        '''
-        for opt in self.options:
-            print(self.options[opt].__doc__)
+    helpKeys = 'The keywords to look for in the file names'
+    helpDest = 'The Name Of The Folder into which the files\nto be moved'
 
-    def unknown(self):
-        '''
-        -h     no args
-               print avilable options(this msg)
-        '''
-        print('unkown option, type `asd org -h` for avilable options')
+    parser = argparse.ArgumentParser(prog = 'organize files in folders')
+    parser.add_argument('mode',help = helpMode,choices = ['all','one'])
+    parser.add_argument('dest',type = str,help = helpDest)
+    parser.add_argument('keys',nargs = '+',type = str,help = helpKeys)
+    a   = parser.parse_args()
+    org.Org(a.mode,a.dest,a.keys)
+main()
 
-    def allin(self):
-        '''
-        -a     dst [keys..]
-               move all files with keys to specific dir(dst)
-               All keys must exist to move the file
-        '''
-        org.Org(['all']+os.sys.argv[2:])
 
-    def onein(self):
-        '''
-        -o     dst [keys..]
-               move all files with keys to specific dir(dst)
-               at least one key must exist to move the file
-        '''
-        org.Org(['one']+os.sys.argv[2:])
+
+

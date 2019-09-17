@@ -20,4 +20,4 @@ def main():
     ctrlf.main_class(args.match,args.path,args.ignore)
 
 
-main()
+# main()

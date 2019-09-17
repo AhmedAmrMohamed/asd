@@ -1,3 +1,6 @@
 def main():
     import os
-    os.system(f'explorer {os.getcwd()}')
+    platform = os.sys.platform
+    path     = os.getcwd()
+    command  = 'xdg-open' if platform == 'linux' else 'explorer'
+    os.system(' '.join([command,path]))

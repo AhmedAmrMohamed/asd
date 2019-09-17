@@ -1,6 +1,7 @@
 import os
 class Org:
     def __init__(self,mode,dst,keys):
+        print('start')
         self.mode = mode
         self.dst  = dst
         self.keys = keys
@@ -26,17 +27,16 @@ class Org:
         dst  = self.dst
         func = self.allIn if self.mode =='all' else self.oneIn
         for walkitr in os.walk(dire):
-            print('dir :: ',walkitr[0].split('\\')[-1])
-            if walkitr[0].split('\\')[-1] ==  dst:
+            print('dir :: ',walkitr[0].split('/')[-1])
+            if walkitr[0].split('/')[-1] ==  dst:
                 print('skipped :: ',dst)
                 continue
             for currfile in walkitr[2]:
                 if func(currfile):
-                    comm = f'move \"{walkitr[0]}\\{currfile}\" {dire}\\{dst}'
-                    smtWrong = os.system(comm)
-                    if smtWrong:
-                        print(comm)
-
+                    try:
+                        os.rename(f'{walkitr[0]}/{currfile}',f'{dire}/{dst}/{currfile}')
+                    except Exception as exc:
+                        print('something went wrong\n',exc)
     def folder_exist(self):
         if self.dst in os.listdir():
             return
