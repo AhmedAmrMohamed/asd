@@ -1,3 +1,12 @@
 def main():
     import os
-    os.system(f'explorer {os.getcwd()}')
+    command = None
+    if os.sys.platform == 'linux':
+        command = 'xdg-open'
+    elif os.sys.platform.startswith('win'):
+        command = 'explorer'
+    else:
+        print('unsupported platform')
+        quit()
+
+    os.system(f'{command} {os.getcwd()}')

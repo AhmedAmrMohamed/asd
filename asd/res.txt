@@ -1,5 +1,0 @@
-found files
-command.cpython-36.pyc --> C:\Users\Ahmed\Desktop\py\asd\asd\ctrlf\__pycache__
-command.py --> C:\Users\Ahmed\Desktop\py\asd\asd\ctrlf
-command.py --> C:\Users\Ahmed\Desktop\py\asd\asd\cfrate
-found directories...
