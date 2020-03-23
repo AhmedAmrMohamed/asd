@@ -56,16 +56,19 @@ class cfrate:
 
 
     def get(self):
-        '''
-        a recursive function where the magic happens
-        if a handle is given the program will get
-        the change in that handle rate.
-        '''
-        try:
+            '''
+            a recursive function where the magic happens
+            if a handle is given the program will get
+            the change in that handle rate.
+            '''
+        # try:
             # print(f'sending {self.id}, {self.handle if self.handle else ""} , {ctime()} ...')
             print('sending {}, {} , {} ...'.format(self.id,
                 self.handle if self.handle else "" , ctime()))
-            res = requests.get(self.__url).json()
+            # res = requests.get(self.__url).json()
+            res = requests.get(self.__url)
+            print(res.content)
+            # res = res.json()
             if res['status']!='FAILED' and len(res['result']):
                 self.do()
                 if self.handle:
@@ -82,7 +85,7 @@ class cfrate:
                 sleep(1)
                 self.progress(i, self.secs, status='Before next Request')
             self.get()
-        except Exception as ex:
-            print('cfrate wrong', ex)
+        # except Exception as ex:
+            # print('cfrate wrong', ex)
             # self.get()
 

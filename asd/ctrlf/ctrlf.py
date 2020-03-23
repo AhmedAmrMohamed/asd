@@ -41,4 +41,5 @@ class main_class():
             print('opening now')
             os.sys.stdout.close()
             os.system(self.respath+'/'+self.resfile)
+        
 
