@@ -23,11 +23,6 @@ have the option to look for pattern and ignore another.
 From the cmd/terminal, opens the current directory into explorer.
 saves me a lot of frustration on daily basis ;D
 
-#### joke
-The main idea is to use some API to give me some cheesy one-liners
-plans to be developed by adding more APIs and further automate the
-process to the point where I don't even type any command.
-
 #### opterm
 only on windows) `bash asd opterm path` open the cmd w/ in the path directory
 just like "expo" this is useless by itself but really useful in other projects
