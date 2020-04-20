@@ -17,7 +17,11 @@ class asd:
             exec(f'asd.{se.targ}.command.main()')
         except ModuleNotFoundError:
             print('unknow script')
-        # if se.targ != 'joke':
-            # os.system('asd joke tell')
+        except SyntaxError:
+            print('I cannot understand this command\n\
+            \rtry agian, for example:\n\
+            \rasd sds')
+        except KeyboardInterrupt:
+            print('... Exiting, see you soon ...')
 def main():
     asd()
