@@ -1,3 +1,11 @@
+## requirment
+ * python3.6+<br>
+ * setuptools >> `pip install setuptools`
+ 
+## Install
+`git clone https://github.com/theunderd0g/asd`<br>
+`python asd/setuptools.py install`
+
 ## What Does What.
 
 ### asd/
@@ -58,3 +66,7 @@ exists under multiple very similar yet different names.
 for options run ```bash asd cdtf -h``` 
 for more info check the [original ctf repo][https://github.com/theunderd0g/Clean-them-files]
 
+#### backup
+backup the current directory to another location by copying ONLY the files that don't exist in
+the destination
+##### PS: if two files under the same name exist in both dirs, the src file won't be coppied
