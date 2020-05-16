@@ -21,11 +21,14 @@ class Reghandler():
         self.insert()
     
     def load(self):
+        if not os.path.isfile(self.file):  # if cache doesn't exist, create empty one
+            fil = open(self.file,'wb')
+            fil.close()
         fil = open(self.file,'rb')
         try:
             lis = pickle.load(fil)
-        except EOFError:
-            print('register not foun')
+        except Exception:
+            print('register not found, creating an empty one')
             lis = []
         if lis is None:
             lis = []
